@@ -1,4 +1,4 @@
-// Given an array of integers, write a recursive function 
+// Given an array of integers, write a recursive function
 // that returns the sum of all itegers in the array.
 
 // This type of problem is often solved using looping/iteration,
@@ -6,7 +6,7 @@
 // first solve the problem using a loop and then refactor
 // to use recursion.
 
-// Remember to create a base case/exit condition to prevent 
+// Remember to create a base case/exit condition to prevent
 // a stack overflow.
 
 // Examples:
@@ -17,5 +17,15 @@
 
 
 var sumArray = function(arr) {
-  // Your code here
+  var result = 0;
+
+  if (!Array.isArray(arr)) {
+    result += arr;
+  } else {
+    arr.forEach(function(num) {
+      result += sumArray(num);
+    });
+  }
+
+  return result;
 };
