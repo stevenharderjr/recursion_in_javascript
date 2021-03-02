@@ -17,6 +17,16 @@
 // etc...
 
 var nthFibonacci = function(n) {
-  // Your code here
+  var hourglass = n;
+  var fib = 1;
+  var preFib = 0;
+
+  while (--hourglass) {
+    var thisFib = fib + preFib;
+    preFib = fib;
+    fib = thisFib;
+  }
+
+  return fib;
 };
 
